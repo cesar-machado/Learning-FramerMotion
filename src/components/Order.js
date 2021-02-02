@@ -13,20 +13,20 @@ const containerVariants = {
       type: "spring",
       mass: 0.4,
       damping: 8,
-      when: 'beforeChildren',
-      staggerChildren: 0.4
+      when: "beforeChildren",
+      staggerChildren: 0.4,
     },
   },
 };
 
 const childVariants = {
   init: {
-    opacity: 0
+    opacity: 0,
   },
   visible: {
-    opacity: 1
-  }
-}
+    opacity: 1,
+  },
+};
 
 const Order = ({ pizza }) => {
   return (
@@ -37,10 +37,9 @@ const Order = ({ pizza }) => {
       animate="visible"
     >
       <h2>Thank you for your order :)</h2>
+
       <motion.p variants={childVariants}>You ordered a {pizza.base} pizza with:</motion.p>
-      <motion.div 
-        variants={childVariants}
-      >
+      <motion.div variants={childVariants}>
         {pizza.toppings.map((topping) => (
           <div key={topping}>{topping}</div>
         ))}
